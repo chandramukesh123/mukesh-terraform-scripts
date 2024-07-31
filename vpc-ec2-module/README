@@ -1,1 +1,14 @@
 This terraform script is to create vpc with public and private subnets and create 2 ec2 instances in each subnet.
+
+Process:
+Here i want to create 2 modules for vpc and ec2 
+ec2 need to create in the same vpc
+for that we need vpc id, required subnet ids, for that in module/vpc/outputs.tf i defined vpc and subnet id's.
+in module/ec2/variable.tf, i defined vpc, required subnets as variable and type as string with logical name.
+in module/ec2/ec2.tf, wherever vpc, subnet required i define like "var.logicalnameofvpc(or)subnet".
+in main.tf in the root folder, i defined vpc and ec2 modules.
+in ec2 module, after source path defination, i used vpc, subnet variables logical id's to define variable values
+syntax like this
+
+
+<variable logial id> = module.<vpc module logical name defined in main.tf>.<logical name of vpc in the output>
