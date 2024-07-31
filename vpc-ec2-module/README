@@ -1,0 +1,1 @@
+This terraform script is to create vpc with public and private subnets and create 2 ec2 instances in each subnet.
