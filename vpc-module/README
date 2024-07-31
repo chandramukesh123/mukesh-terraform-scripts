@@ -1,0 +1,2 @@
+This terraform script is to create vpc with module concept
+It will create one vpc with 2 subnets, one is in public and one is in private subnet.
