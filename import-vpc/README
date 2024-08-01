@@ -1,1 +1,34 @@
 This terraform script is to import existing vpc and will be managed by terraform after terraform plan and apply
+
+Here i have created vpc, 2 subnets, internet gateway and internet gateway associated with public subnet
+
+i want to import these resources into terraform after that i want to manage resources by terraform
+
+import syntax:
+
+terraform import [options] ADDR ID
+
+ADDR - aws_vpc.<logical name>
+ID - id of existing vpc
+
+ex: terraform import aws_vpc.main vpc-134354345
+
+import block syntax:
+
+import {
+  to = "aws_vpc.<logical name>"
+  id = "vpc-56789765e4"
+}
+
+import block syntax for module:
+
+import {
+  to = module.<module logical name>.aws_vpc.<vpc logical name>
+  id = "vpc-0226f6ec693232601"
+}
+
+
+import {
+  to = module.vpc_module.aws_subnet.private_subnet_test
+  id = "subnet-0226f6ec693232601"
+}
