@@ -1,0 +1,1 @@
+This terraform script is to import existing vpc and will be managed by terraform after terraform plan and apply
