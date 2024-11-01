@@ -1,0 +1,2 @@
+This Terraform script will create vpc with 3 subnets one is public subnet and 2 are private subnets
+EC2 instance will get create in public subnet and RDS instance will create in private subnets.
